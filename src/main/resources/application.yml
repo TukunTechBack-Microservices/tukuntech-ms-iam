@@ -39,12 +39,23 @@ springdoc:
   swagger-ui:
     path: /swagger-ui.html
 
-
 app:
   security:
     jwt:
       secret: ${JWT_SECRET}
       issuer: tukuntech-api
-      access-token-expiration: ${JWT_ACCESS_EXPIRATION:1800000}      # ms
-      refresh-token-expiration: ${JWT_REFRESH_EXPIRATION:1209600000}  # ms
+      access-token-expiration: ${JWT_ACCESS_EXPIRATION:1800000}
+      refresh-token-expiration: ${JWT_REFRESH_EXPIRATION:1209600000}
       maximum-sessions: ${JWT_MAX_SESSIONS:5}
+
+  seed:
+    enabled: ${APP_SEED_ENABLED:false}
+    admin:
+      email: ${SEED_ADMIN_EMAIL:admin@tukuntech.com}
+      password: ${SEED_ADMIN_PASSWORD:Admin123}
+    attendant:
+      email: ${SEED_ATTENDANT_EMAIL:attendant@tukuntech.com}
+      password: ${SEED_ATTENDANT_PASSWORD:Attendant123}
+    patient:
+      email: ${SEED_PATIENT_EMAIL:patient@tukuntech.com}
+      password: ${SEED_PATIENT_PASSWORD:Patient123}
