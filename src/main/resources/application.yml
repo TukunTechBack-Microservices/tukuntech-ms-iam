@@ -59,3 +59,17 @@ app:
     patient:
       email: ${SEED_PATIENT_EMAIL:patient@tukuntech.com}
       password: ${SEED_PATIENT_PASSWORD:Patient123}
+
+cors:
+  allowed-origins:
+    - http://localhost:4200
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - PATCH
+    - DELETE
+    - OPTIONS
+  allowed-headers:
+    - "*"
+  allow-credentials: true
